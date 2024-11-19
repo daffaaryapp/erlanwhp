@@ -202,6 +202,15 @@ img {
   position: absolute;
   justify-self: center;
   align-self: flex-end;
+  transform: translateY(3rem);
+  -webkit-transform: translateY(3rem);
+  -moz-transform: translateY(3rem);
+  -ms-transform: translateY(3rem);
+  -o-transform: translateY(3rem);
+}
+
+@media screen {
+  
 }
 
 .perfil__data{
@@ -282,9 +291,14 @@ img {
 }
 
 .info__img{
-  width: 140px;
+  width: 300px;
   justify-self: center;
-  align-self: flex-end;
+  align-self: flex-start;
+  transform: translateY(-8rem);
+  -webkit-transform: translateY(-8rem);
+  -moz-transform: translateY(-8rem);
+  -ms-transform: translateY(-8rem);
+  -o-transform: translateY(-8rem);
 }
 
 .info__description{
@@ -351,10 +365,13 @@ img {
 }
 
 .about__img{
-  width: 250px;
+  width: 300px;
   justify-self: center;
-  transform: translateY(-2.5rem);
-  
+  transform: translateY(-8rem);
+  -webkit-transform: translateY(-8rem);
+  -moz-transform: translateY(-8rem);
+  -ms-transform: translateY(-8rem);
+  -o-transform: translateY(-8rem);
 }
 
 .about__note{
