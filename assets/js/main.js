@@ -3,7 +3,39 @@
 
 
 
-/*=============== SHOW SCROLL UP ===============*/ 
+/*=============== CAROUSEL ===============*/
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel__img');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+    });
+    images[index].classList.add('active');
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    showImage(currentIndex);
+}
+
+// Auto slide every 3 seconds
+setInterval(nextImage, 3000);
+
+// Event listeners for buttons
+document.getElementById('nextBtn').addEventListener('click', nextImage);
+document.getElementById('prevBtn').addEventListener('click', prevImage);
+
+// Initialize first image
+showImage(currentIndex);
+
+/*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () =>{
 	const scrollUp = document.getElementById('scroll-up')
     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
@@ -15,7 +47,7 @@ window.addEventListener('scroll', scrollUp)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
-    
+
 const scrollActive = () =>{
   	const scrollDown = window.scrollY
 
@@ -29,7 +61,7 @@ const scrollActive = () =>{
 			sectionsClass.classList.add('active-link')
 		}else{
 			sectionsClass.classList.remove('active-link')
-		}                                                    
+		}
 	})
 }
 window.addEventListener('scroll', scrollActive)
